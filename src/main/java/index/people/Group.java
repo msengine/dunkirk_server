@@ -2,21 +2,21 @@ package index.people;
 
 public class Group {
 
-	private int groupId;
+	private String groupId;
 	private String groupName;
 	private String groupOrganisation;
 
-	public Group(int groupId, String groupName, String groupOrganisation) {
+	public Group(String groupId, String groupName, String groupOrganisation) {
 		this.groupId = groupId;
 		this.groupName = groupName;
 		this.groupOrganisation = groupOrganisation;
 	}
 
-	public int getGroupId() {
+	public String getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(int groupId) {
+	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 	}
 
