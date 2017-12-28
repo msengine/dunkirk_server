@@ -32,9 +32,9 @@ public class GroupController {
 
 	/* add new group */
 	@RequestMapping(value = "/group", method = RequestMethod.POST)
-	public String putNewGroup(@RequestParam(value = "groupName") String groupName,
-			@RequestParam(value = "groupOrganisation") String groupOrganisation) {
-		groups.add(new Group(Long.toString(counter.incrementAndGet()), groupName, groupOrganisation));
+	public String putNewGroup(@RequestParam(value = "name") String name,
+			@RequestParam(value = "organization") String organization) {
+		groups.add(new Group(Long.toString(counter.incrementAndGet()), name, organization));
 		return "true";
 	}
 }
