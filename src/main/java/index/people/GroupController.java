@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,5 +28,13 @@ public class GroupController {
 		groups.add(new Group(Long.toString(counter.incrementAndGet()), "seoul", "university"));
 
 		return true;
+	}
+
+	/* add new group */
+	@RequestMapping(value = "/group", method = RequestMethod.POST)
+	public String addGroup(@RequestParam(value = "name") String name,
+			@RequestParam(value = "organization") String organization) {
+		groups.add(new Group(Long.toString(counter.incrementAndGet()), name, organization));
+		return "true";
 	}
 }
